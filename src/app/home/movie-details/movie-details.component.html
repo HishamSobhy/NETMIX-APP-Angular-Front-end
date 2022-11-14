@@ -1,0 +1,130 @@
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Template Mo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>NETMIX - Movie Detail Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" >
+
+
+
+
+  </head>
+
+<body>
+   <section class="section main-banner" id="top" >
+    <video autoplay  loop id="bg-video" [muted]="'muted'"  >
+        <source src="assets/images/Interstellar.mp4" type="video/mp4" />
+    </video>
+ </section> 
+
+<!-- <section class="heading-page header-text" {{Detitl_Movie?.trailerUrl}} id="top">
+ <div class="container" >
+   <div class="row">
+     <div class="col-lg-12">
+     
+     </div>
+   </div>
+ </div>
+</section> -->
+
+<section class="meetings-page" id="meetings"  >
+ <div class="container" >
+   <div class="row">
+     <div class="col-lg-12">
+       <div class="row" >
+         <div class="col-lg-12" >
+           <div class="meeting-single-item ">
+             <div class="thumb">
+               <div class="price"  >
+                 <span>{{Detitl_Movie?.rating}}<span class="fa fa-star checked" id="star"></span></span>
+               </div>
+               <div class="date">
+                  <h6>{{Detitl_Movie?.year}}</h6> 
+               </div>
+                <a href="Movie-details.html"><img src={{Detitl_Movie?.imageUrl}} alt=""></a> 
+             </div>
+             <div class="down-content">
+                <a href="Movie-details.html"><h4> Film Name: {{Detitl_Movie?.title}}</h4></a>
+               <p>Director Name: {{Detitl_Movie?.director}}</p> 
+               <p class="description">
+                 <br><br><h3>Description</h3>
+                   {{Detitl_Movie?.description}}  
+               </p>
+               <div class="row">
+                 <div class="col-lg-4">
+                   <div class="hours">
+                     <h5>Duration</h5>
+                      <p>{{Detitl_Movie?.duration}} <span>MIN</span></p> 
+                   </div>
+                 </div>
+                 <div class="col-lg-4">
+                   <div class="location">
+                     <h5>Actors</h5>
+                     <p>Recreio dos Bandeirantes, 
+                     <br>Rio de Janeiro - RJ, 22795-008, Brazil</p>
+                   </div>
+                 </div>
+                 <div class="col-lg-4">
+                   <div class="book now">
+                     <h5>NO Votes</h5>
+                      <p>{{Detitl_Movie?.votes}}</p> 
+                   </div>
+                 </div>
+                 <div class="col-lg-12">
+                   <div class="share">
+                     <h5>Share:</h5>
+                     <ul>
+                       <li><a href="https://www.facebook.com/">Facebook</a>,</li>
+                       <li><a href="https://twitter.com/">Twitter</a>,</li>
+                       <li><a href="https://www.linkedin.com/">Linkedin</a>,</li>
+                     </ul>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div class="col-lg-12">
+           <div class="main-button-red">
+             <a routerLink="/home">Back To Meetings List</a>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+
+</section>
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script src="../assets/js/isotope.min.js"></script>
+<script src="../assets/js/owl-carousel.js"></script>
+<script src="../assets/js/lightbox.js"></script>
+<script src="../assets/js/tabs.js"></script>
+<script src="../assets/js/video.js"></script>
+<script src="../assets/js/slick-slider.js"></script>
+<script src="../assets/js/custom.js"></script>
+ 
+
+</body>
+  
+
+
+
+
+ 
+
+</html>

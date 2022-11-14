@@ -1,0 +1,99 @@
+
+<section class="upcoming-meetings" id="meetings">
+
+<br>
+<br>
+<form [formGroup]="addForm" (ngSubmit)="save(addForm)">
+    <div class="row m-5">
+        <h2>Add Movie</h2>
+        <div class="col-xs-2">
+            <div class="form-group  mt-3">
+                <label for="exampleFormControlInput1">Title</label>
+                <input class="form-control" formControlName="title" type="text" placeholder="Movie Name">
+            </div>
+            <div class="form-group mt-3">
+                <label for="exampleFormControlTextarea1">Movie Description</label>
+                <textarea class="form-control" formControlName="description" type="text"
+                    id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div class="form-group  mt-3">
+                <label for="exampleFormControlInput1">Rating</label>
+                <input class="form-control" formControlName="rating" type="text" placeholder="Add rating">
+            </div>
+            <div class="form-group  mt-3">
+                <label for="exampleFormControlInput1">Votes</label>
+                <input class="form-control" formControlName="votes" type="text" placeholder="Add Votes">
+            </div>
+            <div class="form-group  mt-3">
+                <label for="exampleFormControlInput1">Image URL</label>
+                <input class="form-control" formControlName="imageUrl" type="text" placeholder="URL">
+            </div>
+            <div class="form-group  mt-3">
+                <label for="exampleFormControlInput1">Trailer URL</label>
+                <input class="form-control" formControlName="trailerUrl" type="text" placeholder="Trailer">
+            </div>
+            <div class="form-group  mt-3">
+                <label for="exampleFormControlInput1">Year</label>
+                <input class="form-control" formControlName="year" type="text" placeholder="Release Year">
+            </div>
+            <div class="form-group  mt-3">
+                <label for="exampleFormControlInput1">Duration</label>
+                <input class="form-control" formControlName="duration" type="text" placeholder="Movie Duration">
+            </div>
+            <div class="form-group  mt-3">
+                <label for="exampleFormControlSelect1">Select Director</label>
+                <select class="form-control selectpicker" #mySelect (change)='onDirectorSelected(mySelect.value)' formControlName="directorName" id="exampleFormControlSelect1">
+                    <option>--Select--</option>
+                    <option *ngFor="let dir of directorList">{{dir.directorName}}</option>
+                </select>
+                <!-- <div class="form-group  mt-3">
+                    <label for="exampleFormControlInput1">ID</label>
+                    <input class="form-control" formControlName="directorId" type="text" placeholder="Trailer">
+                </div> -->
+            </div>
+            <div class="form-group  mt-3">
+                <label for="exampleFormControlSelect1">Select Actor</label>
+                <select class="form-control selectpicker" #myActor (change)='onActorSelected(myActor.value)' formControlName="actorName" id="exampleFormControlSelect1">
+                    <option>--Select--</option>
+                    <option *ngFor="let act of actorList">{{act.actorName}}</option>
+                </select>
+            </div>
+            <div class="form-group  mt-3">
+                <label for="exampleFormControlSelect1">Select Genre</label>
+                <select class="form-control" #mySelect (change)='onOptionsSelected(mySelect.value)' formControlName="genreName" id="exampleFormControlSelect1">
+                    <option>--Select--</option>
+                    <option *ngFor="let gen of genreList">{{gen.genreName}}</option>
+                </select>
+            </div>
+            <button type="submit" [disabled]="addForm.invalid" class="btn btn-secondary mt-3">Save</button>
+        </div>
+    </div>
+</form>
+
+<br><br>
+<div class="form-group m-5">
+    <h2>Add Director</h2>
+    <form #directorForm="ngForm" (ngSubmit)="addDirector(directorForm.value)">
+        <input class="form-control" type="text" ngModel name="directorName" placeholder="Director Name">
+        <button type="submit" class="btn btn-secondary mt-3">Add Director</button>
+    </form>
+</div>
+
+<br>
+<div class="form-group m-5">
+    <h2>Add Actor</h2>
+    <form #actorForm="ngForm" (ngSubmit)="addActor(actorForm.value)">
+        <input class="form-control" type="text" ngModel name="actorName" placeholder="Actor Name">
+        <button type="submit" class="btn btn-secondary mt-3">Add Actor</button>
+    </form>
+</div>
+
+<br>
+<div class="form-group m-5">
+    <h2>Add Genre</h2>
+    <form #genreForm="ngForm" (ngSubmit)="addGenre(genreForm.value)">
+        <input class="form-control" type="text" ngModel name="genreName" placeholder="Genre Name">
+        <button type="submit" class="btn btn-secondary mt-3">Add Genre</button>
+    </form>
+</div>
+</section>

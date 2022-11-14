@@ -1,0 +1,49 @@
+<section class="upcoming-meetings" id="top_10">
+ <div class="container">
+   <div class="row">
+     <div class="col-lg-12" id="free_To_watch">
+       <div class="section-heading">
+         <h2>Update Details Movie</h2>
+       </div>
+
+<div class="form"> 
+  <div class="row m-5">
+      <div class="col-xs-2">
+          <div class="form-group  mt-3">
+              <label for="exampleFormControlInput1">Title</label>
+              <input type="text" class="form-control" [(ngModel)]="Movie_update.title" name="title">
+          </div>
+          <div class="form-group  mt-3">
+              <label for="exampleFormControlInput1">Rating</label>
+              <input type="text" class="form-control"  [(ngModel)]="Movie_update.rating">
+          </div>
+          <div class="form-group  mt-3">
+              <label for="exampleFormControlInput1">Votes</label>
+              <input type="text" [(ngModel)]="Movie_update.votes" class="form-control" id="exampleFormControlInput1" placeholder="Add Votes">
+          </div>
+
+
+          <div class="form-group mt-3">
+              <label for="exampleFormControlTextarea1">Movie Description</label>
+              <textarea [(ngModel)]="Movie_update.description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <form>
+           <div class="form-group  mt-3">
+               <label for="exampleFormControlFile1">Upload Poster</label>
+               <input [(ngModel)]="Movie_update.imageUrl" type="file" class="form-control-file" id="exampleFormControlTextarea1">
+           </div>
+       </form>
+       <div class="save">
+          <button class="btn btn-secondary mt-3" (click)="save()">Save</button>
+         </div>
+         </div>
+  </div>
+
+
+
+</div>
+
+     </div>
+   </div>
+ </div>
+</section>

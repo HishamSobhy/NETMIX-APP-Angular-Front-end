@@ -1,0 +1,200 @@
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+  <meta name="description" content="" />
+  <meta name="author" content="TemplateMo" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900"
+  />
+  <base href="/" />
+  <title>NETMIX MOVIES</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" />
+  <link
+    href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"
+  ></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="sub-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-sm-8">
+          <div class="left-content">
+            <p>Project graduation <em>.NET Fullstack </em> ITI branch ALEX</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+          <div class="right-icons">
+            <ul>
+              <li>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-behance"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <div class="netmix">
+                <h3 class="red">NET</h3>
+                <h3>MIX</h3>
+              </div>
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- <a routerLink="/home">home</a>
+                     <a routerLink="['/MovieDetail','']"></a> -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section">
+                <a routerLink="/home" routerLinkActive="active">Home</a>
+              </li>
+              
+              <li class="scroll-to-section">
+                <a routerLink="/Top10Movies"  routerLinkActive="active">TOP 10 MOVIES</a>
+              </li>
+              <li class="has-sub">
+                <a href="javascript:void(0)">Genre</a>
+                <ul class="sub-menu">
+                  <li><a href="/.html">History</a></li>
+                  <li><a href="/.html">Horror</a></li>
+                  <li><a href="/.html">Action</a></li>
+                </ul>
+              </li>
+              <li class="scroll-to-section">
+                <a routerLink="/CRUD_Admin" *ngIf="isLoggedIn" routerLinkActive="active" >Admin Role</a>
+              </li>
+              <div class="rigster" *ngIf="!isLoggedIn">
+              <button class="scroll-to-section" id="login" routerLink="/login/">Log in</button>
+              <button class="scroll-to-section" id="sign in" routerLink="/register/">Sign in</button>
+              </div>
+
+
+              <div class="logout" >
+
+                <li class="nav-item" *ngIf="isLoggedIn">
+                  <a routerLink="" class="btn btn-primary" (click)="logout()">LogOut</a>
+                </li>
+              </div>
+        
+        
+        
+
+              <!-- <li class="scroll-to-section"><a href="#contact">WATCHED</a></li> -->
+            </ul>
+            <a class="menu-trigger">
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <!-- ***** Main Banner Area Start ***** -->
+
+  <!-- ***** Main Banner Area End ***** -->
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../assets/js/isotope.min.js"></script>
+  <script src="../assets/js/owl-carousel.js"></script>
+  <script src="../assets/js/lightbox.js"></script>
+  <script src="../assets/js/tabs.js"></script>
+  <script src="../assets/js/video.js"></script>
+  <script src="../assets/js/slick-slider.js"></script>
+  <script src="../assets/js/custom.js"></script>
+  <script>
+    //according to loftblog tut
+    $(".nav li:first").addClass("active");
+
+    var showSection = function showSection(section, isAnimate) {
+      var direction = section.replace(/#/, ""),
+        reqSection = $(".section").filter('[data-section="' + direction + '"]'),
+        reqSectionPos = reqSection.offset().top - 0;
+
+      if (isAnimate) {
+        $("body, html").animate(
+          {
+            scrollTop: reqSectionPos,
+          },
+          800
+        );
+      } else {
+        $("body, html").scrollTop(reqSectionPos);
+      }
+    };
+
+    var checkSection = function checkSection() {
+      $(".section").each(function () {
+        var $this = $(this),
+          topEdge = $this.offset().top - 80,
+          bottomEdge = topEdge + $this.height(),
+          wScroll = $(window).scrollTop();
+        if (topEdge < wScroll && bottomEdge > wScroll) {
+          var currentId = $this.data("section"),
+            reqLink = $("a").filter("[href*=\\#" + currentId + "]");
+          reqLink
+            .closest("li")
+            .addClass("active")
+            .siblings()
+            .removeClass("active");
+        }
+      });
+    };
+
+    $(".main-menu, .responsive-menu, .scroll-to-section").on(
+      "click",
+      "a",
+      function (e) {
+        e.preventDefault();
+        showSection($(this).attr("href"), true);
+      }
+    );
+
+    $(window).scroll(function () {
+      checkSection();
+    });
+  </script>
+</body>

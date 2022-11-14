@@ -1,0 +1,19 @@
+div#table_data[_ngcontent-ojs-c53] {
+ width: 98%;
+}
+
+.oprationn {
+ display: flex;
+ justify-content: space-between;
+}
+
+tbody {
+ text-align: center;
+ background-color: bisque;
+}
+
+.cerate {
+ display: flex;
+ justify-content: center;
+ padding-top: 100px;
+}

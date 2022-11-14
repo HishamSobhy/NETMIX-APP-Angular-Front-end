@@ -1,0 +1,211 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+  <meta name="description" content="" />
+  <meta name="author" content="TemplateMo" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900"
+  />
+  <base href="/" />
+  <title>NETMIX MOVIES</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" />
+  <link
+    href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"
+  ></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+</head>
+<body>
+<!-- viedio -->
+  <section class="section main-banner" id="top" data-section="section1">
+    <video autoplay loop id="bg-video" [muted]="'muted'">
+        <source src="../assets/images/Casino Royale.mp4" type="video/mp4" />
+    </video>
+
+    <div class="video-overlay header-text">
+
+ <!-- sarching bar  routerLink="/MoviesDetail"   #box (keyup)="getValue(box.value)"  -->
+ <div class="main-button-red">
+      <div class="container h-100">
+        <div class="d-flex justify-content-center h-100">
+          <div class="searchbar">
+            <input class="search_input" type="text"
+            [(ngModel)]="title"
+            (input)="searchTextchange"
+             placeholder="Search...">
+             <a  [routerLink]="['/home','Detitl_Movies',this.title]"  (click)="search(title)"   class="search_icon"><i class="fa fa-search"></i></a>
+          </div>
+          <!-- <button (click)="search()"  class="btn btn-primary">click Here</button>  routerLink="/home/Detitl_Movies/"-->
+
+        </div>
+      </div>
+
+    </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="caption">
+            <h2>Welcome to NETMIX</h2>
+            <p>
+              <a rel="nofollow" href="https://templatemo.com/page/1" target="_blank">
+                 <a rel="nofollow" href="https://www.pexels.com/@pressmaster" target="_blank"></a>Get access to maintain your own custom personal lists, track what you've seen and search and filter for what to watch next—regardless if it's in theatres, on TV or available on popular streaming services like Netflix, Amazon Prime Video, Apple TV Plus, and FlixOlé.</a>
+            <div class="main-button-red">
+                <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
+            </div>
+        </div>
+            </div>
+          </div>
+        </div>
+    </div>
+ </section>
+
+<!-- Most popular -->
+ <section class="our-courses" id="courses">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-heading">
+          <h2>What's Popular</h2>
+        </div>
+      </div>
+<div class="containers">
+<div class="card" *ngFor="let item of Data_Top6Movies">
+  <h3 class="title">{{item.title}}</h3>
+  
+  <div class="bar">
+    <div class="emptybar"></div>
+    <div class="filledbar"></div>
+  </div>
+  <div class="circle" >
+    <img class="imge_card" src={{item.imageUrl}}/>
+   
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <circle class="stroke" cx="60" cy="60" r="50">
+      
+    </circle>
+    
+  </svg>
+  <div class="rate">
+  <h3>33</h3>
+</div>
+  </div>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<!-- show Movies -->
+  <section class="upcoming-meetings" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12" id="free_To_watch">
+          <div class="section-heading">
+            <h2>Free To Watch</h2>
+          </div>
+
+          <!-- card in page using to showing list of movies -->
+
+            <div class="col-lg-12">
+              <div class="row" >
+                <!-- first card *ngFor="let item of Data_Movies | paginate:{ itemsPerPage: 12, currentPage: p }"-->
+                <div class="col-lg-3" *ngFor="let item of Data_Movies ; let i = index; ">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      <div class="price">
+                        <span>{{item.rating}}  <span class="fa fa-star checked" id="star"></span>
+                      </span>
+                      </div>
+                      <!-- refrance using in rauter -->
+                      <a   
+                      href="../movie-details/movie-details.component.html" 
+                        
+                        >
+                        <img
+                          src={{item.imageUrl}}
+                          alt="Online Teaching"
+                      /></a>
+                    </div>
+                    <div class="down-content">
+                     <div class="date">
+                        <h6 class="get_name">{{item.title}} </h6>
+                        <span>{{item.year}}</span>
+                      </div> 
+                      <a href="Movie-details.html"
+                        ><h4></h4></a
+                      >
+                      <h6>Description</h6>
+                      <p> 
+                        
+                        <span id={{i+1}}> {{item.description}} </span>
+
+                      </p>
+                      <!-- (click)="search()" -->
+                      <div id={{item.title}}>
+                        <a class="read" id={{item.title}}
+                        onclick="get_id(this)"
+                        
+                        [routerLink]="['/home','Detitl_Movies',item.title]"
+                        >Read More</a>
+                        </div>
+                    </div>
+                  </div>
+  
+                <!-- end first card       -->
+  
+  
+              </div>
+
+            </div>
+          </div>
+      
+        </div>
+        
+      </div>
+
+
+
+      <div id="pages">
+
+
+
+        
+        <!-- <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-end">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav> -->
+      </div>
+    </div>
+  </section>
+
+
+</body>
+</html>

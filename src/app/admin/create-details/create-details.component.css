@@ -1,0 +1,12 @@
+section#top_10 {
+ padding-top: 10%;
+}
+
+label {
+ z-index: 1;
+ color: white;
+}
+
+.save {
+ direction: rtl;
+}
